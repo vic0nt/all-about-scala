@@ -1,0 +1,10 @@
+.idea/
+hackerrank/target/
+/euler/euler.iml
+/misc/misc.iml
+/euler/target/
+/misc/target/
+/fpInScalaBook/target/
+*.iml
+/scala-fp/target/
+/.idea/vcs.xml
