@@ -3,17 +3,21 @@ import org.scalatest.{FunSuite, Matchers}
 class AdhocSuite extends FunSuite with Matchers {
 
   test("Empty lists") {
-    val a: List[String] = Nil
-    val b: List[Int] = Nil
+    val xs = List("Manny", "Moe", "Jack")
+    val ys = List("Manny", "Moe", "Jack")
+    (xs sameElements ys) should be(true)
 
-    (a == Nil) should be(true)
-    (a eq Nil) should be(true)
+    val xt = List("Manny", "Moe", "Jack")
+    val yt = List("Manny", "Jack", "Moe")
+    (xt sameElements yt) should be(false)
 
-    (b == Nil) should be(true)
-    (b eq Nil) should be(true)
+    val xs1 = Set(3, 2, 1, 4, 5, 6, 7)
+    val ys1 = Set(7, 2, 1, 4, 5, 6, 3)
+    (xs1 sameElements ys1) should be(true)
 
-    (a == b) should be(true)
-    (a eq b) should be(true)
+    val xt1 = Set(1, 2, 3)
+    val yt1 = Set(3, 2, 1)
+    (xt1 sameElements yt1) should be(false)
   }
 
 }
